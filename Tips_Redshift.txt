@@ -1,0 +1,19 @@
+Tips_Redshift
+
+
+●実行計画の取り方
+SQLの頭にexplainをつければ取れる。
+
+例
+explain
+select eventid, eventname, event.venueid, venuename
+from event, venue
+where event.venueid = venue.venueid;
+
+
+explain verboseをつけるともう少し詳細な実行計画を取得可能
+例
+explain verbose
+select eventid, eventname, event.venueid, venuename
+from event, venue
+where event.venueid = venue.venueid;
